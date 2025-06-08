@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Huduma Mkononi - A Modern Day Digital Agency</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Firebase Compat SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+    
+    <!-- Your Script -->
+    <link rel="stylesheet" href="allservice.css">
+    <script src="allservice.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+       
+
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-contact">
+                    <span>📞 (+254)116 040 646</span>
+                    <a href="mailto:services@digitali.co.ke">📧 service@hudumamkononi.co.ke</a>
+                </div>
+
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter" class="icon twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube" class="icon youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="WhatsApp" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="LinkedIn" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- 
+        <div class="quick-links-bar">
+            <div class="container">
+                <a href="#">E-Citizen Services <span class="arrow">→</span></a>
+                <a href="#">KRA Services <span class="arrow">→</span></a>
+                <a href="#">NTSA Services <span class="arrow">→</span></a>
+                <a href="#">TSC Services <span class="arrow">→</span></a>
+                <a href="#">Huduma Services <span class="arrow">→</span></a>
+                <a href="#">SHA Services <span class="arrow">→</span></a>
+                <a href="#">NSSF Services <span class="arrow">→</span></a>
+            </div>
+        </div> -->
+        <header class="main-header">
+            <div class="header-container">
+                <div class="header-logo" id="mainLogo">
+                    <img src="images/logo.png" alt="Company Logo" class="logo-image">
+                </div>
+                <nav class="header-navigation" id="mainNav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#services" class="nav-link">IT Services</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">G.O.K Services</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Cyber Services</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Extra Services</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Downloads</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+                <div class="header-actions" id="headerActions">
+                    <a href="#" aria-label="User Profile" class="action-icon user"><i class="fas fa-user"></i></a>
+                    <a href="#" aria-label="Cart" class="action-icon cart"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </header>
+  <!-- Modal HTML -->
+<div class="modal fade" id="requestModal" tabindex="-1" aria-labelledby="requestModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form id="requestForm" class="needs-validation p-3" novalidate>
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="requestModalLabel">
+            Request Help for <span id="modalServiceTitle" class="fw-bold"></span>
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="selectedService" />
+
+          <h6 class="mb-3">Contact Information</h6>
+
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name *</label>
+            <input type="text" class="form-control" id="firstName" placeholder="e.g. Kipkorir" required>
+            <div class="invalid-feedback">First name is required.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name *</label>
+            <input type="text" class="form-control" id="lastName" placeholder="e.g. Collins" required>
+            <div class="invalid-feedback">Last name is required.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="emailAddress" class="form-label">Email Address *</label>
+            <input type="email" class="form-control" id="emailAddress" placeholder="e.g. collinkipkorir@gmail.com" required>
+            <div class="invalid-feedback">Valid email address is required.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="clientPhone" class="form-label">Phone Number *</label>
+            <input type="tel" class="form-control" id="clientPhone" placeholder="e.g. +254712345678" pattern="\+?2547[0-9]{8}" required>
+            <div class="invalid-feedback">Enter a valid Kenyan phone number.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="issueDesc" class="form-label">Describe Your Issue *</label>
+            <textarea class="form-control" id="issueDesc" placeholder="Provide a detailed description..." rows="4" required></textarea>
+            <div class="invalid-feedback">Please describe your issue.</div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+        
+          <button type="submit" class="btn btn-primary w-100">Submit Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+        <section id="all-services" class="allservices py-5 bg-light">
+            <div class="container">
+                <h2 id="category-title" class="text-start mb-5 fw-bold">Loading Services...</h2>
+                <div class="service-grid" id="allServicesContainer">
+                    <!-- Category-specific service cards will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <section id="faq" class="faq">
+            <div class="container">
+
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p>Ready to enhance your cyber security? Contact us today for a consultation.</p>
+                <form id="contactForm">
+                    <div><label for="name">Name:</label><input type="text" id="name" name="name"
+                            placeholder="Your Full Name" required></div>
+                    <div><label for="email">Email:</label><input type="email" id="email" name="email"
+                            placeholder="your.email@example.com" required></div>
+                    <div><label for="message">Message:</label><textarea id="message" name="message"
+                            placeholder="How can we help you?" required></textarea></div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="X" class="x"><i class="fab fa-x"></i></a>
+                    <a href="#" aria-label="YouTube" class="youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="WhatsApp" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="LinkedIn" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p>&copy; 2025 Huduma Kwa Wakenya. All Rights Reserved.</p>
+                <p>Designed by Metacode Solutions</p>
+            </div>
+        </footer>
+
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
